@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feed</title>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <%= link_to "BogBagBook", root_path, class: "header-title" %>
+    </div>
+    <div class="header-center">
+      <!-- Search Bar -->
+      <%= form_with(url: posts_path, method: :get, local: true, class: "search-form") do |form| %>
+        <%= form.text_field :query, placeholder: "Search posts...", class: "search-input" %>
+        <%= form.submit "Search", class: "search-button" %>
+      <% end %>
+    </div>
+    <nav class="header-right">
+      <% if user_signed_in? %>
+        <%= link_to "Create Post", new_post_path, class: "header-link" %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "header-link" %>
+      <% else %>
+        <%= link_to "Sign Up", new_user_registration_path, class: "header-link" %>
+        <%= link_to "Login", new_user_session_path, class: "header-link" %>
+      <% end %>
+    </nav>
+  </header>
+
+  <!-- Feed -->
+  <div class="feed">
+    <% if @posts.any? %>
+      <% @posts.each do |post| %>
+        <div class="post">
+          <!-- Post Content -->
+          <div class="post-content-box">
+            <h2 class="post-title"><%= post.title %></h2>
+            <p class="post-content"><%= post.content %></p>
+            <p class="post-author">
+              <small>Posted by: <%= post.user.username if post.user %></small>
+            </p>
+            <p class="post-author">
+              <small><%= post.created_at.in_time_zone('Bangkok').strftime("%B %d, %Y %H:%M") %></small>
+            </p>
+          </div>
+
+          <!-- Post Actions -->
+          <div class="post-actions">
+            <!-- Like Section -->
+            <div class="like-section" id="like-section-<%= post.id %>">
+              <p class="likes-count"><%= post.likes.count %> Likes</p>
+              <% if user_signed_in? %>
+                <% if current_user.likes.exists?(post: post) %>
+                  <button class="like-button unlike"
+                          data-post-id="<%= post.id %>"
+                          data-url="<%= post_like_path(post) %>"
+                          data-method="delete">
+                    Unlike
+                  </button>
+                <% else %>
+                  <button class="like-button like"
+                          data-post-id="<%= post.id %>"
+                          data-url="<%= post_like_path(post) %>"
+                          data-method="post">
+                    Like
+                  </button>
+                <% end %>
+              <% end %>
+            </div>
+
+            <!-- Edit and Delete Buttons -->
+            <% if user_signed_in? && post.user == current_user %>
+              <div class="action-buttons">
+                <%= link_to "Edit", edit_post_path(post), class: "button button-edit" %>
+                <%= button_to "Delete", post_path(post), method: :delete, remote: true, class: "button button-delete", onclick: "return confirm('Are you sure?');" %>
+              </div>
+            <% end %>
+          </div>
+
+          <!-- Comments Section -->
+          <div class="comments">
+            <p class="comments-count"><%= post.comments.count %> Comments</p>
+            <% if user_signed_in? %>
+              <% post.comments.each do |comment| %>
+                <div class="comment">
+                  <p>
+                    <strong><%= comment.user.username %>:</strong>
+                    <%= comment.content %>
+                  </p>
+                  <% if comment.user == current_user %>
+                    <div class="delete-comment">
+                      <%= button_to "Delete", post_comment_path(post, comment), method: :delete, class: "button button-delete", onclick: "return confirm('Are you sure?');" %>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+
+              <!-- Comment Form -->
+              <div class="comment-form">
+                <%= form_with(model: [post, Comment.new], local: true) do |f| %>
+                  <div class="comment-input-group">
+                    <%= f.text_area :content, placeholder: "Add a comment...", rows: 3, class: "comment-input" %>
+                    <%= f.submit "Comment", class: "comment-button" %>
+                  </div>
+                <% end %>
+              </div>
+            <% else %>
+              <!-- Login Prompt -->
+              <div class="login-box">
+                <p class="login-prompt">
+                  <%= link_to "Login", new_user_session_path, class: "login-link" %> to comment.
+                </p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p class="no-posts">
+        No posts yet.
+        <%= link_to "Sign Up", new_user_registration_path %> to create your first post!
+      </p>
+    <% end %>
+  </div>
+</body>
+<footer class="footer">
+  <p>© 2024 BogBagBook</p>
+  <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
+</footer>
+</html>

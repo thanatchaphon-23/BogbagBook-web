@@ -1,0 +1,278 @@
+/* General Page Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2.5em;
+  color: #4caf50;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Navbar Styles */
+.navbar {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.navbar .button {
+  margin: 0 10px;
+}
+
+/* Search Form Styles */
+.search-form {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.search-input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.search-form .button {
+  margin-left: 10px;
+}
+
+/* Feed Styles */
+.feed {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+.post-title {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.post-content {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.post-author {
+  font-size: 0.9em;
+  color: #888;
+}
+
+/* Action Buttons */
+.action-buttons {
+  margin-top: 10px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-primary {
+  background-color: #4caf50;
+  color: white;
+}
+
+.button-primary:hover {
+  background-color: #45a049;
+}
+
+.button-secondary {
+  background-color: #008cba;
+  color: white;
+}
+
+.button-secondary:hover {
+  background-color: #007bb5;
+}
+
+.button-edit {
+  background-color: #ffa500;
+  color: white;
+}
+
+.button-edit:hover {
+  background-color: #e69500;
+}
+
+.button-delete {
+  background-color: #f44336;
+  color: white;
+}
+
+.button-delete:hover {
+  background-color: #d32f2f;
+}
+
+.button-danger {
+  background-color: #ff5722;
+  color: white;
+}
+
+.button-danger:hover {
+  background-color: #e64a19;
+}
+
+/* Like and Comments Section */
+.likes-count,
+.comments-count {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.like-buttons {
+  margin-top: 10px;
+}
+
+.comments {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.comment-form {
+  margin-top: 20px;
+}
+
+.comment-label {
+  font-weight: bold;
+}
+
+.comment-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.login-prompt {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #888;
+}
+
+.no-posts {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #666;
+}
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2.5em;
+  color: #4caf50;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Form Container */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-primary {
+  background-color: #4caf50;
+  color: white;
+}
+
+.button-primary:hover {
+  background-color: #45a049;
+}
+
+.button-secondary {
+  background-color: #008cba;
+  color: white;
+}
+
+.button-secondary:hover {
+  background-color: #007bb5;
+}

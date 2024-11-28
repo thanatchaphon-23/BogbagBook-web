@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
+</head>
+<body class="Login-body">
+  <div class="login-container">
+    <h2 class="login-title">💖 Log in 💖</h2>
+
+    <div class="form-container">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-group">
+          <%= f.label :username, "Username", class: "form-label" %>
+          <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "form-input" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password, "Password", class: "form-label" %>
+          <%= f.password_field :password, autocomplete: "current-password", class: "form-input" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="form-group form-remember">
+            <%= f.check_box :remember_me, class: "form-checkbox" %>
+            <%= f.label :remember_me, "Remember Me", class: "form-checkbox-label" %>
+          </div>
+        <% end %>
+
+        <div class="form-actions">
+          <%= f.submit "Log in", class: "login-button button-primary" %>
+        </div>
+      <% end %>
+
+      <div class="links-container">
+        <p>New here? <%= link_to "Sign up", new_user_registration_path %></p>
+        <p><%= link_to "Forgot your password?", new_password_path(resource_name) %></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

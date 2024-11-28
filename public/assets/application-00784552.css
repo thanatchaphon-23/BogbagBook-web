@@ -1,0 +1,232 @@
+/* General */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #4267B2;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header-nav .header-link {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.header-link:hover {
+  text-decoration: underline;
+}
+
+/* Search Bar */
+.search-bar {
+  background-color: white;
+  padding: 10px 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-group {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #4267B2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #365899;
+}
+
+/* Feed */
+.feed {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+.post-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.post-author {
+  color: #555;
+}
+
+.post-content {
+  margin: 10px 0;
+}
+
+/* Actions */
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-action-link {
+  color: #4267B2;
+  text-decoration: none;
+}
+
+.post-action-link:hover {
+  text-decoration: underline;
+}
+
+
+/* Comments */
+.comments {
+  margin-top: 20px;
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.comment-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.comment-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4267B2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.comment-button:hover {
+  background-color: #365899;
+}
+
+.no-posts {
+  text-align: center;
+  color: #777;
+}
+
+/* Post Actions */
+.post-actions {
+  display: flex;
+  justify-content: space-between; /* กระจายพื้นที่ระหว่างไลค์และปุ่ม */
+  align-items: center; /* จัดให้อยู่แนวกลาง */
+  margin-top: 10px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px; /* ระยะห่างระหว่างส่วนต่าง ๆ */
+}
+
+/* Action Buttons */
+.action-controls {
+  display: flex;
+  justify-content: flex-end; /* จัดชิดขวา */
+  gap: 10px; /* ระยะห่างระหว่างปุ่ม */
+}
+
+.like-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.likes-count {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.button {
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-edit {
+  background-color: #ffa500;
+  color: white;
+  border: none;
+}
+
+.button-edit:hover {
+  background-color: #e69500;
+}
+
+.button-delete {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+.button-delete:hover {
+  background-color: #d32f2f;
+}
+
+.like-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.like-button.like {
+  background-color: #4267B2;
+  color: white;
+}
+
+.like-button.unlike {
+  background-color: #f44336;
+  color: white;
+}
+
+.like-button:hover {
+  opacity: 0.9;
+}
